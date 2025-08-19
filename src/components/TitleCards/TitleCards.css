@@ -28,4 +28,6 @@
     bottom: 10px;
     right: 10px;
     user-select: none;
+    text-decoration: none;
+    color: white;
 }

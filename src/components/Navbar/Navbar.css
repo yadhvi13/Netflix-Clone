@@ -68,3 +68,9 @@
     display: block;
     border-radius: 10px;
 }
+.nav-dark{
+    /* background: #141414; */
+    background: rgba(20, 20, 20, 0.8); /* 0.8 = 80% opacity */
+    backdrop-filter: blur(10px); /* optional: adds a frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* for Safari support */
+}

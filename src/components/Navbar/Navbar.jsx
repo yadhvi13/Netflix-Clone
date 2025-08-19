@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useRef } from 'react'
 import './Navbar.css'
 import logo from '/src/assets/logo.png'
 import search_icon from '/src/assets/search_icon.svg'
@@ -7,8 +8,23 @@ import profile_icon from '/src/assets/profile_img.png'
 import caret_icon from '/src/assets/caret_icon.svg'
 
 const Navbar = () => {
+
+  const navRef = useRef();
+
+  //to create dark effect in scrolling the window to navbar
+  useEffect(()=> {
+    window.addEventListener('scroll', ()=> {
+      if(window.scrollY >= 80){
+        navRef.current.classList.add('nav-dark')
+      }
+      else{
+        navRef.current.classList.remove('nav-dark')
+      }
+    })
+  }, [])
+
   return (
-    <div className='navbar'>
+    <div ref={navRef} className='navbar'>
      <div className="navbar-left">
       <img src={logo} alt="" />
       <ul>
